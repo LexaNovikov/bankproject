@@ -14,4 +14,3 @@ def get_mask_card_number(card_number: str) -> str:
 
 def get_mask_account(account: str) -> str:
     return "**" + account[-4:]
-пробный коммит 2
