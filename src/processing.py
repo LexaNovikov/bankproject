@@ -16,6 +16,6 @@ def sort_by_date(dictionaries_list: list[dict], key: bool = True) -> list[dict]:
         while idx > 0 and result[idx - 1]["date"] < result[idx]["date"]:
             result[idx - 1], result[idx] = result[idx], result[idx - 1]
             idx -= 1
-    if key == False:
+    if not (key):
         result.reverse()
     return result
