@@ -14,7 +14,8 @@ def mask_account_card(card_number_or_account: str) -> str:
 
 
 def get_date(date: str) -> str:
-    final_date = date[:10]
-    final_date = final_date.split("-")
+    raw_date = date[:10]
+    final_date = raw_date.split("-")
     final_date[0], final_date[2] = final_date[2], final_date[0]
-    return ".".join(final_date)
+    result = ".".join(final_date)
+    return result

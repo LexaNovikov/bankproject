@@ -1,5 +1,7 @@
-from src.widget import get_date, mask_account_card
+from os import path
+
 from src.processing import filter_by_state, sort_by_date
+from src.widget import get_date, mask_account_card
 
 filters_tests = [
     {"id": 1, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
@@ -16,12 +18,12 @@ filters_tests = [
     {"id": 12, "state": "CANCELED", "date": "2020-01-03T12:00:00"},
 ]
 print("==========MASK_ACCOUNT_CARD==========")
-with open("tests/mask_account_card.txt", "r") as file:
+with open(path.join(path.dirname(__file__), "mask_account_card.txt"), "r") as file:
     data = file.readlines()
     for i in data:
         print(i, mask_account_card(i), sep="", end="\n=====================================\n")
 print("\n=============GET_DATE=============")
-with open("tests/get_date_tests.txt", "r") as file:
+with open(path.join(path.dirname(__file__), "get_date_tests.txt"), "r") as file:
     data = file.readlines()
     for i in data:
         print(i, get_date(i), sep="", end="\n=====================================\n")
