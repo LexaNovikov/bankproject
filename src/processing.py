@@ -1,5 +1,5 @@
 def filter_by_state(dictionaries_list: list[dict], key: str = "EXECUTED") -> list[dict]:
-    '''Функция для фильтрации логов по state'''
+    """Функция для фильтрации логов по state"""
     result = []
     for data_dict in dictionaries_list:
         if data_dict["state"] == key:
@@ -8,7 +8,7 @@ def filter_by_state(dictionaries_list: list[dict], key: str = "EXECUTED") -> lis
 
 
 def sort_by_date(dictionaries_list: list[dict], key: bool = True) -> list[dict]:
-    '''Функция для сортировки логов по дате'''
+    """Функция для сортировки логов по дате"""
     len_of_result = 0
     result = []
     for data_dict in dictionaries_list:
