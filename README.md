@@ -12,13 +12,8 @@ git clone https://github.com/LexaNovikov/bankproject.git
 ```
 pip install poetry
 ```
- 
-3. Инициализируйте poetry
-```
-poetry init
-```
 
-4. Установите зависимости
+3. Установите зависимости
 ```
 poetry install
 ```
