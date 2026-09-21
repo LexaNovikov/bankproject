@@ -53,6 +53,6 @@ exclude = '''
     )/
 )'''
 [tool.isort]
-line-length = 119
+line_length = 119
 [tool.flake8]
 max-line-length = 119

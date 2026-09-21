@@ -1,7 +1,8 @@
-from masks import get_mask_account, get_mask_card_number
+from .masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(card_number_or_account: str) -> str:
+    """Функция для определения и маскировки карт и аккаунтов"""
     data = card_number_or_account.split()
     if len(data[-1]) == 16:
         masked_card_number = get_mask_card_number(data[-1])
@@ -14,7 +15,9 @@ def mask_account_card(card_number_or_account: str) -> str:
 
 
 def get_date(date: str) -> str:
-    final_date = date[:10]
-    final_date = final_date.split("-")
+    """Функция для форматирования даты"""
+    raw_date = date[:10]
+    final_date = raw_date.split("-")
     final_date[0], final_date[2] = final_date[2], final_date[0]
-    return ".".join(final_date)
+    result = ".".join(final_date)
+    return result
