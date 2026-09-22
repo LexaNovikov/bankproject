@@ -11,6 +11,7 @@ def test_filter_by_state(data_filter_list: list[dict]) -> None:
         {"id": 9, "state": "EXECUTED", "date": "2020-05-15T15:30:00"},
         {"id": 10, "state": "EXECUTED", "date": "2020-01-01T12:00:00"},
     ]
+    assert filter_by_state([]) == []
     assert filter_by_state(data_filter_list, "CANCELED") == [
         {"id": 2, "state": "CANCELED", "date": "2018-06-30T02:08:58.425572"},
         {"id": 7, "state": "CANCELED", "date": "2020-01-01T12:00:00"},
@@ -18,5 +19,6 @@ def test_filter_by_state(data_filter_list: list[dict]) -> None:
         {"id": 11, "state": "CANCELED", "date": "2020-01-02T12:00:00"},
         {"id": 12, "state": "CANCELED", "date": "2020-01-03T12:00:00"},
     ]
+    assert filter_by_state([], "nice") == []
     assert filter_by_state(data_filter_list, "") == []
     return

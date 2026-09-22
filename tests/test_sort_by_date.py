@@ -16,6 +16,7 @@ def test_sort_by_date(data_filter_list: list[dict]) -> None:
         {"id": 6, "state": "EXECUTED", "date": "2020-03-01T12:00:00"},
         {"id": 9, "state": "EXECUTED", "date": "2020-05-15T15:30:00"},
     ]
+    assert sort_by_date([], False)==[]
     assert sort_by_date(data_filter_list) == [
         {"id": 9, "state": "EXECUTED", "date": "2020-05-15T15:30:00"},
         {"id": 6, "state": "EXECUTED", "date": "2020-03-01T12:00:00"},
@@ -30,4 +31,6 @@ def test_sort_by_date(data_filter_list: list[dict]) -> None:
         {"id": 3, "state": "EXECUTED", "date": "2018-09-12T21:27:25.241689"},
         {"id": 2, "state": "CANCELED", "date": "2018-06-30T02:08:58.425572"},
     ]
+    assert sort_by_date([])==[]
+
     return
