@@ -14,7 +14,9 @@ from src.widget import get_date
 def test_get_date(data: str, expected: str) -> None:
     assert get_date(data) == expected
     return
-def test_get_date_error():
+
+
+def test_get_date_error() -> None:
     with pytest.raises(ValueError) as e:
         get_date("")
     assert str(e.value) == "Дан некорректный формат даты или не дата вовсе"

@@ -1,10 +1,10 @@
-from masks import get_mask_account, get_mask_card_number
+from .masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(card_number_or_account: str) -> str:
     """Функция для определения и маскировки карт и аккаунтов"""
     data = card_number_or_account.split()
-    if len(data)==0 or len(data[-1]) == 0:
+    if len(data) == 0 or len(data[-1]) == 0:
         raise ValueError("Некорректный номер счета или карты")
     for char in data[-1]:
         if char not in "1234567890":
@@ -27,7 +27,7 @@ def get_date(date: str) -> str:
     if len(raw_date) == 0:
         raise ValueError("Дан некорректный формат даты или не дата вовсе")
     for idx, char in enumerate(raw_date):
-        if ((idx==4 or idx == 7) and char != "-") or ((idx != 4 and idx !=7) and char not in "0123456789"):
+        if ((idx == 4 or idx == 7) and char != "-") or ((idx != 4 and idx != 7) and char not in "0123456789"):
             raise ValueError("Дан некорректный формат даты или не дата вовсе")
     final_date = raw_date.split("-")
     final_date[0], final_date[2] = final_date[2], final_date[0]

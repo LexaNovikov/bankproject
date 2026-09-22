@@ -19,7 +19,9 @@ from src.widget import mask_account_card
 def test_mask_account_card(data: str, expected: str) -> None:
     assert mask_account_card(data) == expected
     return
-def test_mask_account_card_error():
+
+
+def test_mask_account_card_error() -> None:
     with pytest.raises(ValueError) as e:
         mask_account_card("")
-    assert str(e.value)=="Некорректный номер счета или карты"
+    assert str(e.value) == "Некорректный номер счета или карты"
