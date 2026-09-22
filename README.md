@@ -42,13 +42,31 @@ pytest ./tests
 ```processing.py``` 
 Содержит функции фильтров по дате и статусу
 
+```generators.py```
+Содержит функции генерации номера карты, фильтрации транзакций по валютам и вывод информации по транзакции 
+
 В пакете ```tests``` содержатся модули и файлы для тестирования функций
 
-```test.py ```
-Модуль тестирования, тестит все функции
+```conftest.py```
+Модуль, содержащий фикстуры pytest
 
-```get_date_tests.txt```
-Тесты для функции get_date
+```test_mask_account_card.py```
+Модуль тестирования, предназначенный для тестирования функции ```mask_account_card.py``` из модуля ```widget.py```
 
-```mask_account_card.txt```
-Тесты для функции mask_account_card
+```test_get_date.py```
+Модуль тестирования, предназначенный для тестирования функции ```get_date.py``` из модуля ```widget.py```
+
+```test_filter_by_state.py```
+Модуль тестирования, предназначенный для тестирования функции ```filter_by_state.py``` из модуля ```processing.py```
+
+```test_sort_by_date.py```
+Модуль тестирования, предназначенный для тестирования функции ```sort_by_date.py``` из модуля ```processing.py```
+
+```test_card_number_generator```
+Модуль тестирования, предназначенный для тестирования функции ```card_number_generator``` из модуля ```generators.py```
+
+```test_filter_by_currency```
+Модуль тестирования, предназначенный для тестирования функции ```filter_by_currency``` из модуля ```generators.py```
+
+```test_transaction_descriptions```
+Модуль тестирования, предназначенный для тестирования функции ```transaction_descriptions``` из модуля ```generators.py```
