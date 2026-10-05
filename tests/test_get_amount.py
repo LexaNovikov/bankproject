@@ -2,7 +2,7 @@ from unittest.mock import patch
 
 from src.external_api import get_amount
 
-url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from=USD&amount=100.0"
+url = "https://api.apilayer.com/exchangerates_data/convert?to=RUB&from=USD&amount=100.0"
 
 
 @patch("requests.request")

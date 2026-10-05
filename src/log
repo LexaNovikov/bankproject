@@ -1,0 +1,4 @@
+add, ok
+
+add error: can only concatenate str (not "int") to str. Inputs: ('3', 1), {}
+
