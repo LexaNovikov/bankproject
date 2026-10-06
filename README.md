@@ -48,6 +48,12 @@ pytest ./tests
 ```decorators.py```
 Сожержит декоратор log для логирования ошибок или успешной работы функции
 
+```external_api.py```
+Содержит функцию возврата стоимости транзакции в рублях
+
+```utils.py```
+Содержит функцию получения списка операций
+
 В пакете ```tests``` содержатся модули и файлы для тестирования функций
 
 ```conftest.py```
@@ -65,14 +71,20 @@ pytest ./tests
 ```test_sort_by_date.py```
 Модуль тестирования, предназначенный для тестирования функции ```sort_by_date.py``` из модуля ```processing.py```
 
-```test_card_number_generator```
+```test_card_number_generator.py```
 Модуль тестирования, предназначенный для тестирования функции ```card_number_generator``` из модуля ```generators.py```
 
-```test_filter_by_currency```
+```test_filter_by_currency.py```
 Модуль тестирования, предназначенный для тестирования функции ```filter_by_currency``` из модуля ```generators.py```
 
-```test_transaction_descriptions```
+```test_transaction_descriptions.py```
 Модуль тестирования, предназначенный для тестирования функции ```transaction_descriptions``` из модуля ```generators.py```
 
-```test_log_decorator```
+```test_log_decorator.py```
 Модуль тестирования, предназначенный для тестирования декоратора ```log``` из модуля ```decorators.py```
+
+```test_get_amount.py```
+Модуль тестирования, предназначенный для тестирования функции ```get_amount``` из модуля ```external_api.py```
+
+```test_get_operations_data```
+Модуль тестирования, предназначенный для тестирования функции ```get_operations_data``` из модуля ```utils.py```
