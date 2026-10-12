@@ -1,10 +1,11 @@
-import pandas as pd
 import os
 
-import pytest
+import pandas as pd
 
 
-def read_csv(path: str = "../data/transactions.csv") -> list[dict]:
+def read_csv(
+    path: str = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "transactions.csv")
+) -> list[dict]:
     """Функция для чтения csv файлов"""
     if not os.path.exists(path):
         raise FileNotFoundError("Файл не найден")
@@ -13,9 +14,14 @@ def read_csv(path: str = "../data/transactions.csv") -> list[dict]:
     if not path.endswith(".csv"):
         raise ValueError("Расширение файла не является csv")
     reader = pd.read_csv(path, delimiter=";")
-    print(reader.to_dict("records"))
     return reader.to_dict("records")
-def read_xlsx(path: str = "../data/transactions_excel.xlsx") -> list[dict]:
+
+
+def read_xlsx(
+    path: str = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "transactions_excel.xlsx"
+    )
+) -> list[dict]:
     """Функция для чтения xlsx файлов"""
     if not os.path.exists(path):
         raise FileNotFoundError("Файл не найден")
@@ -25,7 +31,3 @@ def read_xlsx(path: str = "../data/transactions_excel.xlsx") -> list[dict]:
         raise ValueError("Расширение файла не является xlsx")
     reader = pd.read_excel(path)
     return reader.to_dict("records")
-
-
-# print()
-# print(read_xlsx())
