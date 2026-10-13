@@ -1,5 +1,7 @@
 import pytest
 
+from math import nan
+
 
 @pytest.fixture
 def data_filter_list() -> list[dict]:
