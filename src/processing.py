@@ -2,7 +2,7 @@ def filter_by_state(dictionaries_list: list[dict], key: str = "EXECUTED") -> lis
     """Функция для фильтрации логов по state"""
     result = []
     for data_dict in dictionaries_list:
-        if data_dict["state"] == key:
+        if data_dict.get("state") == key:
             result.append(data_dict)
     return result
 
