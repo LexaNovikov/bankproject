@@ -1,14 +1,15 @@
 from functools import wraps
 
 from mypy.nodes import Callable
+from mypy.types import Any
 
 
 def log(filename: str = "console") -> Callable:
     """Декоратор для логирования работы функции"""
 
-    def decorator(func):
+    def decorator(func: Callable) -> Callable:
         @wraps(func)
-        def wrapper(*args, **kwargs):
+        def wrapper(*args: list, **kwargs: dict) -> Any:
             try:
                 res = func(*args, **kwargs)
                 if filename == "console":
@@ -27,11 +28,3 @@ def log(filename: str = "console") -> Callable:
         return wrapper
 
     return decorator
-
-
-@log()
-def solve(x, b):
-    return x + b
-
-
-print(solve(1, 2))
