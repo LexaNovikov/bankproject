@@ -1,6 +1,6 @@
-import pytest
-
 from math import nan
+
+import pytest
 
 
 @pytest.fixture
