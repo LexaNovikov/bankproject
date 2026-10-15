@@ -1,3 +1,5 @@
+from math import nan
+
 import pytest
 
 
